@@ -1,10 +1,8 @@
-from django.shortcuts import get_object_or_404
-from rest_framework import viewsets, permissions
+from rest_framework import viewsets
 from rest_framework.exceptions import PermissionDenied
 from .serializers import PostSerializer, CommentSerializer, GroupSerializer
 from posts.models import Post, Comment, Group
 from .permissions import IsAuthorOrReadOnly
-
 
 
 class PostViewSet(viewsets.ModelViewSet):
@@ -54,6 +52,7 @@ class GroupViewSet(viewsets.ReadOnlyModelViewSet):
 
 class PostViewSet(viewsets.ModelViewSet):
     permission_classes = [IsAuthorOrReadOnly]
+
 
 class CommentViewSet(viewsets.ModelViewSet):
     permission_classes = [IsAuthorOrReadOnly]

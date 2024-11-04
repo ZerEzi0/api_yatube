@@ -69,10 +69,7 @@ REST_FRAMEWORK = {
     ],
 }
 
-
-
 # Database
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
