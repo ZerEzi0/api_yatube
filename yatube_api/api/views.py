@@ -1,6 +1,5 @@
-from django.shortcuts import get_object_or_404
 from rest_framework import viewsets
-from rest_framework.permissions import IsAuthenticatedOrReadOnly, IsAuthenticated
+from rest_framework.permissions import IsAuthenticated
 from .permissions import IsAuthorOrReadOnly
 from .serializers import PostSerializer, CommentSerializer, GroupSerializer
 from posts.models import Post, Comment, Group
@@ -35,4 +34,3 @@ class GroupViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
     permission_classes = [IsAuthenticated]
-
